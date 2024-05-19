@@ -80,6 +80,11 @@ while True:
             playXRect.center = playXButton.center
             screen.blit(playX, playXRect)
         elif playOButton.collidepoint(mouse):
+            if playXbtn_sound_played == False:
+                playXbtn_sound_played = True
+                hover_btn_sound.play()
+                
+            
             pygame.draw.rect(screen,(255,255,150),playOButton,0,15)
             playO = mediumFont.render("Play as O", True, black)
             playORect = playO.get_rect()
